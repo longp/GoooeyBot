@@ -47,11 +47,20 @@ client.on('chat', function(channel, user, message, self) {
 client.on('chat', function(channel, user, message, self) {
   var usernameInMessage = message.slice(5,message.length);
   var banInMessage = message.slice(0,4);
-  console.log(usernameInMessage);
-  console.log(banInMessage);
-  if(user.username === 'g000ey' && message !== '' && banInMessage === "!ban" ){
-      client.ban('g000ey', usernameInMessage);
-      console.log('banned' + usernameInMessage);
-      client.action('g000ey', usernameInMessage  + ' has been banned GG KappaPride');
+
+  if(user.username === 'g000ey' && message.length >= 5 && banInMessage === "!ban" ){
+    client.ban('g000ey', usernameInMessage);
+    client.action('g000ey', usernameInMessage  + ' has been banned GG KappaPride');
+    }
+});
+
+//oopsie need to unban peepz
+client.on('chat', function(channel, user, message, self) {
+  var usernameInMessage = message.slice(7,message.length);
+  var banInMessage = message.slice(0,6);
+
+  if(user.username === 'g000ey' && message.length >= 4 && banInMessage === "!unban" ){
+    client.unban('g000ey', usernameInMessage);
+    client.action('g000ey',"by the grace of his Gooeyness "+ usernameInMessage  + ' has been unbanned GG Kreygasm Kreygasm');
     }
 });
