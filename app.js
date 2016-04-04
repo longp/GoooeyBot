@@ -49,6 +49,14 @@ client.on('chat', function(channel, user, message, self) {
   }
 });
 
+// options for the users when !options
+client.on('chat', function(channel, user, message, self) {
+  if(message === '!options' || message === '!commands' ) {
+    client.action('g000ey', 'commands are: !naopgg !twitter !instagram !github !playlist ')
+  }
+});
+
+
 //banning peeps in the chat
 client.on('chat', function(channel, user, message, self) {
   var usernameInMessage = message.slice(5,message.length);
@@ -95,5 +103,12 @@ client.on('chat', function(channel, user, message, self) {
 client.on('chat', function(channel, user, message, self) {
   if(message === '!github' ) {
     client.action('g000ey', 'His github : https://github.com/longp' )
+  }
+});
+
+// wiill link my utube playlsit
+client.on('chat', function(channel, user, message, self) {
+  if(message === '!playlist' ) {
+    client.action('g000ey', 'Goooey\'s playlist : https://www.youtube.com/watch?v=flClF2ZAZYE&list=PLfcP12khJPhCS7_UkuMWNk7aKUqlRUEpx' )
   }
 });
