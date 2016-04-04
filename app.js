@@ -32,3 +32,16 @@ client.on('chat', function(channel, user, message, self) {
     client.action('g000ey', "hi " + user.username + " Welcome to Monkey Island!! KappaPride")
   }
 });
+
+//banning peeps in the chat
+client.on('chat', function(channel, user, message, self) {
+  var usernameInMessage = message.slice(4,message.length);
+  var banInMessage = message.slice(0,3);
+  console.log(usernameInMessage);
+  console.log(banInMessage);
+  if(user.username === 'g000ey' && usernameInMessage !== '' ){
+      client.ban('g000ey', usernameInMessage);
+      console.log('banned' + usernameInMessage);
+      client.action('g000ey', usernameInMessage  + ' has been banned GG Kappa');
+    }
+});
