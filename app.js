@@ -43,7 +43,7 @@ client.on('chat', function(channel, user, message, self) {
     message === "sup"  ||
     message === "hisashibori"  ||
     message === "ohayo"  ||
-    message === "annyeong"  ||)
+    message === "annyeong" )
   {
     client.action('g000ey', "hi " + user.username + " Welcome to Monkey Island!! KappaPride")
   }
