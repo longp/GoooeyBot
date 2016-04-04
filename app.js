@@ -76,4 +76,24 @@ client.on('chat', function(channel, user, message, self) {
   if(message === "!rank" || message === "!stats" || message === "!naopgg") {
     client.action("g000ey", " Goooey stats here :D :D : http://na.op.gg/summoner/userName=goooey ");
   }
-})
+});
+
+//can ask for my instagram account
+client.on('chat', function(channel, user, message, self) {
+  if(message === '!instagram' || message === '!ig' ) {
+    client.action('g000ey', 'Follow him on instagram @ https://www.instagram.com/number1phanboi/' )
+  }
+});
+//twitter command
+client.on('chat', function(channel, user, message, self) {
+  if(message === '!twitter' ) {
+    client.action('g000ey', 'Tweet at him :O : https://twitter.com/lphanyo' )
+  }
+});
+
+//might as well add gtihub
+client.on('chat', function(channel, user, message, self) {
+  if(message === '!github' ) {
+    client.action('g000ey', 'His github : https://github.com/longp' )
+  }
+});
