@@ -45,11 +45,11 @@ client.on('chat', function(channel, user, message, self) {
 
 //banning peeps in the chat
 client.on('chat', function(channel, user, message, self) {
-  var usernameInMessage = message.slice(4,message.length);
-  var banInMessage = message.slice(0,3);
+  var usernameInMessage = message.slice(5,message.length);
+  var banInMessage = message.slice(0,4);
   console.log(usernameInMessage);
   console.log(banInMessage);
-  if(user.username === 'g000ey' && usernameInMessage !== '' && banInMessage === "ban" ){
+  if(user.username === 'g000ey' && message !== '' && banInMessage === "!ban" ){
       client.ban('g000ey', usernameInMessage);
       console.log('banned' + usernameInMessage);
       client.action('g000ey', usernameInMessage  + ' has been banned GG KappaPride');
