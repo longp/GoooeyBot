@@ -116,17 +116,13 @@ client.on('chat', function(channel, user, message, self) {
 // turn on only subs
 client.on('chat', function(channel, user, message, self) {
   if(user.username === 'g000ey' && message === "!subs" ){
-    client.subscribers("g000ey").then(function (data) {
-      console.log(data);
-    })
+    client.subscribers("g000ey");
   }
 });
 
 // turn off subs
 client.on('chat', function(channel, user, message, self) {
   if(user.username === 'g000ey' && message === "!plebs" ){
-    client.subscribersoff("g000ey").then(function (data) {
-      console.log(data);
-    })
+    client.subscribersoff("g000ey");
   }
 });
