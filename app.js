@@ -1,5 +1,5 @@
 var tmi = require('tmi.js');
-var oath = require('keys.js');
+var oath = require('./keys.js');
 var options = {
   options : {
     debug:true
@@ -14,3 +14,14 @@ var options = {
   },
   channels:['g000ey']
 };
+
+
+var client = new tmi.client(options);
+client.connect();
+
+
+//weclome on connect message
+client.on('connected', function(address, port) {
+  client.color("Firebrick");
+  client.action('g000ey', ' hi im goooeybot. Welcome to Goooey'/'s channel Kappa Kreygasm');
+})
