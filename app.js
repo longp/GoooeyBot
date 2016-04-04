@@ -67,7 +67,7 @@ client.on('chat', function(channel, user, message, self) {
 
 //gives kens naopgg rank/stats
 client.on('chat', function(channel, user, message, self) {
-  if(message === "rank" || message === "stats" || message === "naopgg") {
+  if(message === "!rank" || message === "!stats" || message === "!naopgg") {
     client.action("g000ey", " Goooey stats here :D :D : http://na.op.gg/summoner/userName=goooey ");
   }
 })
