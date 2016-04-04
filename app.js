@@ -18,8 +18,8 @@ var options = {
 
 var client = new tmi.client(options);
 client.connect();
-//make gooeybot BanHammer wielder
-client.mod('g000ey', 'goooeybot');
+// //make gooeybot BanHammer wielder
+// client.mod('g000ey', 'goooeybot');
 
 //checkign whose mods
 client.on('chat', function(channel, user, message, self) {
