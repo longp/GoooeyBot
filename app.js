@@ -64,3 +64,10 @@ client.on('chat', function(channel, user, message, self) {
     client.action('g000ey',"by the grace of his Gooeyness "+ usernameInMessage  + ' has been unbanned GG Kreygasm Kreygasm');
     }
 });
+
+//gives kens naopgg rank/stats
+client.on('chat', function(channel, user, message, self) {
+  if(message === "rank" || message === "stats" || message === "naopgg") {
+    client.action("g000ey", " Goooey stats here :D :D : http://na.op.gg/summoner/userName=goooey ");
+  }
+})
