@@ -18,8 +18,18 @@ var options = {
 
 var client = new tmi.client(options);
 client.connect();
+//make gooeybot BanHammer wielder
+client.mod('g000ey', 'goooeybot');
 
-
+//checkign whose mods
+client.on('chat', function(channel, user, message, self) {
+  if(message === '!mods') {
+    client.mods('g000ey').then(function(data) {
+      console.log(data);
+      client.action('g000ey', "Mods are " + data)
+    });
+  }
+});
 //weclome on connect message
 client.on('connected', function(address, port) {
   client.color("Firebrick");
@@ -39,9 +49,9 @@ client.on('chat', function(channel, user, message, self) {
   var banInMessage = message.slice(0,3);
   console.log(usernameInMessage);
   console.log(banInMessage);
-  if(user.username === 'g000ey' && usernameInMessage !== '' ){
+  if(user.username === 'g000ey' && usernameInMessage !== '' && banInMessage === "ban" ){
       client.ban('g000ey', usernameInMessage);
       console.log('banned' + usernameInMessage);
-      client.action('g000ey', usernameInMessage  + ' has been banned GG Kappa');
+      client.action('g000ey', usernameInMessage  + ' has been banned GG KappaPride');
     }
 });
