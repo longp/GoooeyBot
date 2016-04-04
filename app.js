@@ -112,3 +112,21 @@ client.on('chat', function(channel, user, message, self) {
     client.action('g000ey', 'Goooey\'s playlist : https://www.youtube.com/watch?v=flClF2ZAZYE&list=PLfcP12khJPhCS7_UkuMWNk7aKUqlRUEpx' )
   }
 });
+
+// turn on only subs
+client.on('chat', function(channel, user, message, self) {
+  if(user.username === 'g000ey' && message === "!subs" ){
+    client.subscribers("g000ey").then(function (data) {
+      console.log(data);
+    })
+  }
+});
+
+// turn off subs
+client.on('chat', function(channel, user, message, self) {
+  if(user.username === 'g000ey' && message === "!plebs" ){
+    client.subscribersoff("g000ey").then(function (data) {
+      console.log(data);
+    })
+  }
+});
