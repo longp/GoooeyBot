@@ -10,7 +10,7 @@ var options = {
   },
   identity: {
     username: 'goooeybot',
-    password: 'oath'
+    password: oath
   },
   channels:['g000ey']
 };
@@ -23,5 +23,12 @@ client.connect();
 //weclome on connect message
 client.on('connected', function(address, port) {
   client.color("Firebrick");
-  client.action('g000ey', ' hi im goooeybot. Welcome to Goooey'/'s channel Kappa Kreygasm');
+  client.action('g000ey', "hi im goooeybot. Welcome to Goooey's channel Kappa Kreygasm");
 })
+
+// welcomes user when they say hi
+client.on('chat', function(channel, user, message, self) {
+  if(message === "hi"){
+    client.action('g000ey', "hi " + user.username + " Welcome to Monkey Island!! KappaPride")
+  }
+});
