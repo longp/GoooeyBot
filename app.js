@@ -38,7 +38,13 @@ client.on('connected', function(address, port) {
 
 // welcomes user when they say hi
 client.on('chat', function(channel, user, message, self) {
-  if(message === "hi"){
+  if(message === "hi" ||
+    message === "hello"  ||
+    message === "sup"  ||
+    message === "hisashibori"  ||
+    message === "ohayo"  ||
+    message === "annyeong"  ||)
+  {
     client.action('g000ey', "hi " + user.username + " Welcome to Monkey Island!! KappaPride")
   }
 });
