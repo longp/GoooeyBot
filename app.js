@@ -1,3 +1,4 @@
+
 var tmi = require('tmi.js');
 var oath = require('./keys.js');
 var options = {
@@ -38,6 +39,7 @@ client.on('connected', function(address, port) {
 
 // welcomes user when they say hi
 client.on('chat', function(channel, user, message, self) {
+  message = message.toLowerCase()
   if(message === "hi" ||
     message === "hello"  ||
     message === "sup"  ||
@@ -45,7 +47,7 @@ client.on('chat', function(channel, user, message, self) {
     message === "ohayo"  ||
     message === "annyeong" )
   {
-    client.action('g000ey', "hi " + user.username + " Welcome to Monkey Island!! KappaPride")
+    client.action('g000ey', "hi " + user.username + " Welcome to Muh Goooey channel!! KappaPride")
   }
 });
 
